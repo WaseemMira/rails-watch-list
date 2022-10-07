@@ -1,0 +1,23 @@
+<div class="cover mb-4 d-flex align-items-center justify-content-center">
+  <div class="text-center text-white">
+    <h1>Save any kind of movies</h1>
+    <h3 class="typed-js" data-controller="typed-js"></h3>
+  </div>
+</div>
+<div class="container py-5">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h3 class="mb-0">My Lists</h3>
+    <%= link_to "Create a movie list", new_list_path, class: "btn btn-flat" %>
+  </div>
+  <div class="row">
+    <% @lists.each do |list| %>
+      <div class="co-12 col-sm-6 col-md-4 mb-3">
+        <%= link_to list_path(list), class:"text-decoration-none" do %>
+          <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.deviantart.com%2Ffedericodemiso%2Fart%2FMarvel-Avengers-Movie-Wallpaper-789509371&psig=AOvVaw3bto6fOdO0jNUojro4Gq5X&ust=1665168131630000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCOi58-2gzPoCFQAAAAAdAAAAABAN') %>)">
+            <%= list.name %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
